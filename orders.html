@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Заказы</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__inner">
+					<a href="/" class="header__logo logo"><img src="img/logo.svg" alt="Logo"></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#" class="menu__link">Моя панель</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Мои заказы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Инструкции</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__links" data-da=".menu__body, 1199.98">
+							<a href="">
+								Telegram
+							</a>
+							<a href="">
+								WhatsaApp
+							</a>
+						</div>
+						<div class="header__contacts" data-da=".menu__body, 1199.98">
+							<a href="tel:+73332220088">+7 (333) 222-00-88</a>
+							<a href="mailto:Topchinalogistics@mail.com">Topchinalogistics@mail.com</a>
+						</div>
+						<button class="header__btn button button_create" data-da=".menu__body, 1199.98" type="button">Создать
+							заказ <i>+</i></button>
+						<div class="header__ava">
+							<img src="img/avatars/ava.webp" alt="Image">
+							<strong>Иван Колодий</strong>
+							<div class="ava-submenu">
+								<ul class="ava-submenu__list">
+									<li>
+
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#profile"></use>
+											</svg>
+											<span>Мой профиль</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#draft"></use>
+											</svg>
+											<span>Мои черновики</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#exit"></use>
+											</svg>
+											<span>Выйти</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page_inner">
+			<section class="section my-panel">
+				<div class="my-panel__container">
+					<h1 class="my-panel__title title title_h1">Заказы</h1>
+					<div class="tabs tabs_orders" data-tabs>
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title _tab-active">Активный</button>
+							<button type="button" class="tabs__title">Завершен</button>
+							<button type="button" class="tabs__title">Отменен</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="items-drafts">
+									<div class="items-drafts__inner">
+										<div class="items-drafts__left items-drafts__left_orders">
+											<div class="items-drafts__items">
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="pagging">
+
+												<ul class="pagging__list">
+													<li>
+														<a href="" class="pagging__item _active">1</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">2</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">3</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">4</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">5</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item pagging__item_dots">...</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">10</a>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="items-drafts">
+									<div class="items-drafts__inner">
+										<div class="items-drafts__left items-drafts__left_orders">
+											<div class="items-drafts__items">
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="pagging">
+
+												<ul class="pagging__list">
+													<li>
+														<a href="" class="pagging__item _active">1</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">2</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">3</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">4</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">5</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item pagging__item_dots">...</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">10</a>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="items-drafts">
+									<div class="items-drafts__inner">
+										<div class="items-drafts__left items-drafts__left_orders">
+											<div class="items-drafts__items">
+												<div class="items-drafts__item item-draft">
+													<div class="item-draft__col">
+														<div class="item-draft__order my-order">
+															<div class="my-order__top">
+																<div class="my-order__num">№040611</div>
+																<div class="my-order__status">статус</div>
+															</div>
+															<div class="my-order__date text">26.06.2025 17:40:10</div>
+														</div>
+													</div>
+													<div class="item-draft__col">
+														<div class="item-draft__price text text_xl">ХХ ХХХ ₽</div>
+													</div>
+													<div class="item-draft__col">
+														<button class="item-draft__btn button button_light" type="button">Продолжить
+															заказ
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="pagging">
+
+												<ul class="pagging__list">
+													<li>
+														<a href="" class="pagging__item _active">1</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">2</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">3</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">4</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">5</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item pagging__item_dots">...</a>
+													</li>
+													<li>
+														<a href="" class="pagging__item">10</a>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__inner">
+					<div class="footer__left left-footer">
+						<div class="left-footer__item">
+							<a href="tel:+73332220088" class="left-footer__link">+7 (333) 222-00-88</a> <span>/</span>
+							<a href="tel:+72223331177" class="left-footer__link">+7 (222) 333-11-77</a>
+						</div>
+						<div class="left-footer__item">
+							<a href="mailto:Topchinalogistics@mail.com" class="left-footer__link">Topchinalogistics@mail.com</a>
+						</div>
+					</div>
+					<div class="footer__right">
+						<div class="footer__documents">
+							<div class="footer__text">© 2025, ООО «Top China Logistics»</div>
+							<a href="" class="footer__link">Пользовательское соглашение</a>
+							<a href="" class="footer__link">Политика конфиденциальности</a>
+							<div class="footer__social">
+								<a href="" class="footer__social-item">
+									<span>Telegram</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+
+								</a>
+								<a href="" class="footer__social-item">
+									<span>WhatsaApp</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+								</a>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<div class="footer__menu-title">Меню:</div>
+							<ul>
+								<li><a href="">Моя панель</a></li>
+								<li><a href="">Мои заказы</a></li>
+								<li><a href="">Инструкции</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20250729145226"></script>
+</body>
+
+</html>

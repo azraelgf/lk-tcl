@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Заказ</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__inner">
+					<a href="/" class="header__logo logo"><img src="img/logo.svg" alt="Logo"></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#" class="menu__link">Моя панель</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Мои заказы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Инструкции</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__links" data-da=".menu__body, 1199.98">
+							<a href="">
+								Telegram
+							</a>
+							<a href="">
+								WhatsaApp
+							</a>
+						</div>
+						<div class="header__contacts" data-da=".menu__body, 1199.98">
+							<a href="tel:+73332220088">+7 (333) 222-00-88</a>
+							<a href="mailto:Topchinalogistics@mail.com">Topchinalogistics@mail.com</a>
+						</div>
+						<button class="header__btn button button_create" data-da=".menu__body, 1199.98" type="button">Создать
+							заказ <i>+</i></button>
+						<div class="header__ava">
+							<img src="img/avatars/ava.webp" alt="Image">
+							<strong>Иван Колодий</strong>
+							<div class="ava-submenu">
+								<ul class="ava-submenu__list">
+									<li>
+
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#profile"></use>
+											</svg>
+											<span>Мой профиль</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#draft"></use>
+											</svg>
+											<span>Мои черновики</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#exit"></use>
+											</svg>
+											<span>Выйти</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page_inner">
+			<section class="section my-panel">
+				<div class="my-panel__container">
+					<h1 class="my-panel__title title title_h1">Заказ</h1>
+					<div class="create-order">
+						<div class="create-order__inner">
+							<div class="create-order__left">
+								<div class="my-panel__inner">
+									<div class="my-panel__info info-panel">
+										<div class="info-panel__order my-order">
+											<div class="my-order__top">
+												<div class="my-order__num">№040611</div>
+												<div class="my-order__status">статус</div>
+											</div>
+											<div class="my-order__date text">26.06.2025 17:40:10</div>
+										</div>
+										<div class="info-panel__manager">
+											<div class="info-panel__manager-img">
+												<img src="img/avatars/manager.webp" alt="Image" class="ibg">
+											</div>
+											<div class="info-panel__manager-body" data-da=".my-panel__info, 479.98">
+												<small>Мой менеджер</small>
+												<strong>Кирилл Жуков</strong>
+											</div>
+										</div>
+										<div class="info-panel__social social">
+											<a href="" class="social__item">
+												<span>Telegram</span>
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</a>
+											<a href="" class="social__item">
+												<span>WhatsaApp</span>
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="my-panel__order order-panel">
+									<div class="order-panel__item">
+										<div class="item-product">
+											<div class="item-product__img-block">
+												<div class="item-product__img">
+													<img src="img/product/01.webp" alt="Image" class="ibg">
+												</div>
+												<a href="" class="item-product__title text item-product__title_mob">单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+													: 【加固圆管】灰 -</a>
+											</div>
+
+											<div class="item-product__body">
+												<a href="" class="item-product__title text item-product__title_pk">
+													单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+													: 【加固圆管】灰 -
+												</a>
+												<div class="item-product__count count-product">
+													<div class="count-product__item">
+														<label for="price" class="count-product__label text">Цена</label>
+														<div class="count-product__block">
+															<span>¥</span>
+															<input class="count-product__input" id="price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+														</div>
+													</div>
+													<div class="count-product__item">
+														<label for="count" class="count-product__label text">Кол-во
+														</label>
+														<div class="count-product__quantity quantity" data-quantity="">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="count" name="form[]" value="1"></div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<div class="count-product__item">
+														<div class="count-product__total">
+															<div class="count-product__total-text">Сумма:
+															</div>
+															<div class="count-product__total-value">¥6056.00
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="item-product__message">
+												<textarea autocomplete="off" name="form[]" placeholder="Комментарий" class="input"></textarea>
+
+											</div>
+										</div>
+									</div>
+									<div class="order-panel__item">
+										<div class="item-product">
+											<div class="item-product__img-block">
+												<div class="item-product__img">
+													<img src="img/product/01.webp" alt="Image" class="ibg">
+												</div>
+												<a href="" class="item-product__title text item-product__title_mob">单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+													: 【加固圆管】灰 -</a>
+											</div>
+
+											<div class="item-product__body">
+												<a href="" class="item-product__title text item-product__title_pk">
+													单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+													: 【加固圆管】灰 -
+												</a>
+												<div class="item-product__count count-product">
+													<div class="count-product__item">
+														<label for="o-price" class="count-product__label text">Цена</label>
+														<div class="count-product__block">
+															<span>¥</span>
+															<input class="count-product__input" id="o-price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+														</div>
+													</div>
+													<div class="count-product__item">
+														<label for="o-count" class="count-product__label text">Кол-во
+														</label>
+														<div class="count-product__quantity quantity" data-quantity="">
+															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+															<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="o-count" name="form[]" value="1"></div>
+															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+														</div>
+													</div>
+													<div class="count-product__item">
+														<div class="count-product__total">
+															<div class="count-product__total-text">Сумма:
+															</div>
+															<div class="count-product__total-value">¥6056.00
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="item-product__message">
+												<textarea autocomplete="off" name="form[]" placeholder="Комментарий" class="input"></textarea>
+
+											</div>
+										</div>
+									</div>
+									<div class="order-panel__item">
+										<div class="order-panel__title">
+											Данные
+										</div>
+										<div class="order-panel__items">
+											<div class="order-item text">
+												Хозтовары
+											</div>
+											<div class="order-item text">
+												Обычная упаковка
+											</div>
+											<div class="order-item text">
+												Быстрое авто
+											</div>
+											<div class="order-item text">
+												Доставка, г. Санкт-Петербург, Шпалерная ул., д. 1, лит. А, кв. 2
+											</div>
+											<div class="order-item text">
+												Детальная проверка
+												Отдельное фото/видео каждого товара
+												Взвешивание
+												Замер размеров товара
+												Примерка товара на живом человеке
+												Отбраковка (проверка на работоспособность)
+												Осмотр товара на дефекты
+											</div>
+											<div class="order-item text">
+												Стандартная страховк
+											</div>
+											<div class="order-item text">
+												ООО "Хорошая компания
+											</div>
+											<div class="order-item order-item_com text">
+												Комментарий к заказу
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="create-order__right">
+								<div class="create-order__total-sticky">
+									<div class="create-order__total">
+										<div class="create-order__total-label text text_xl">Итого</div>
+										<div class="create-order__total-value text text_xl">ХХ ХХХ ₽</div>
+									</div>
+									<div class="create-order__calc">
+										<div class="calc-create-item">
+											<div class="calc-create-item__top">
+												<div class="calc-create-item__title title title_h4">Выкуп</div>
+												<button class="calc-create-item__btn button" type="button">Очистить заказ
+												</button>
+											</div>
+											<div class="calc-create-item__content text">
+												<div class="calc-create-item__label">Стоимость товара</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Доставка по Китаю</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label beige-label">Комиссия <u class="beige-label__icon">Х%</u></div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Детальная проверка</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Итого выкуп</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											</div>
+										</div>
+										<div class="calc-create-item">
+											<div class="calc-create-item__top">
+												<div class="calc-create-item__title title title_h4">Данные груза</div>
+											</div>
+											<div class="calc-create-item__content text">
+												<div class="calc-create-item__label">Количество мест</div>
+												<div class="calc-create-item__value">ХХ шт</div>
+												<div class="calc-create-item__label">Общий объем</div>
+												<div class="calc-create-item__value">ХХ м3</div>
+												<div class="calc-create-item__label">Общий вес ХХ к</div>
+												<div class="calc-create-item__value"> ХХ к</div>
+												<div class="calc-create-item__label">Средняя плотность</div>
+												<div class="calc-create-item__value"> ХХ кг/м3</div>
+											</div>
+										</div>
+										<div class="calc-create-item">
+											<div class="calc-create-item__top">
+												<div class="calc-create-item__title title title_h4">Доставка</div>
+											</div>
+											<div class="calc-create-item__content text">
+												<div class="calc-create-item__label">Упаковка груза</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Доставка в РФ</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Страховка</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Рыночный сбор</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+												<div class="calc-create-item__label">Итого доставка</div>
+												<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											</div>
+										</div>
+									</div>
+									<div class="create-order__sum">
+										<div class="create-order__sum-item"><span>$</span>81.14</div>
+										<div class="create-order__sum-item"><span>¥</span>11.09</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__inner">
+					<div class="footer__left left-footer">
+						<div class="left-footer__item">
+							<a href="tel:+73332220088" class="left-footer__link">+7 (333) 222-00-88</a> <span>/</span>
+							<a href="tel:+72223331177" class="left-footer__link">+7 (222) 333-11-77</a>
+						</div>
+						<div class="left-footer__item">
+							<a href="mailto:Topchinalogistics@mail.com" class="left-footer__link">Topchinalogistics@mail.com</a>
+						</div>
+					</div>
+					<div class="footer__right">
+						<div class="footer__documents">
+							<div class="footer__text">© 2025, ООО «Top China Logistics»</div>
+							<a href="" class="footer__link">Пользовательское соглашение</a>
+							<a href="" class="footer__link">Политика конфиденциальности</a>
+							<div class="footer__social">
+								<a href="" class="footer__social-item">
+									<span>Telegram</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+
+								</a>
+								<a href="" class="footer__social-item">
+									<span>WhatsaApp</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+								</a>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<div class="footer__menu-title">Меню:</div>
+							<ul>
+								<li><a href="">Моя панель</a></li>
+								<li><a href="">Мои заказы</a></li>
+								<li><a href="">Инструкции</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20250729145226"></script>
+</body>
+
+</html>

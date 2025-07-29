@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Создание заказа</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__inner">
+					<a href="/" class="header__logo logo"><img src="img/logo.svg" alt="Logo"></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#" class="menu__link">Моя панель</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Мои заказы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Инструкции</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__links" data-da=".menu__body, 1199.98">
+							<a href="">
+								Telegram
+							</a>
+							<a href="">
+								WhatsaApp
+							</a>
+						</div>
+						<div class="header__contacts" data-da=".menu__body, 1199.98">
+							<a href="tel:+73332220088">+7 (333) 222-00-88</a>
+							<a href="mailto:Topchinalogistics@mail.com">Topchinalogistics@mail.com</a>
+						</div>
+						<button class="header__btn button button_create" data-da=".menu__body, 1199.98" type="button">Создать
+							заказ <i>+</i></button>
+						<div class="header__ava">
+							<img src="img/avatars/ava.webp" alt="Image">
+							<strong>Иван Колодий</strong>
+							<div class="ava-submenu">
+								<ul class="ava-submenu__list">
+									<li>
+
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#profile"></use>
+											</svg>
+											<span>Мой профиль</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#draft"></use>
+											</svg>
+											<span>Мои черновики</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#exit"></use>
+											</svg>
+											<span>Выйти</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page_inner">
+			<section class="section create-order">
+				<div class="create-order__container">
+					<div class="create-order__inner">
+						<div class="create-order__left">
+							<div class="create-order__top">
+								<h1 class="create-order__title title title_h1">Создание заказа</h1>
+								<div class="create-order__btns btns-group">
+									<a href="" class="btns-group__btn button">Добавить в&nbsp;черновик</a>
+									<a href="" class="btns-group__btn button button_black">Отменить заказ</a>
+								</div>
+							</div>
+							<div class="create-order__progress progress">
+								<div class="progress__wrapper">
+									<div class="progress__overflow">
+										<div class="progress__item _active">
+											<div class="progress__item-title">Добавить товар</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Данные груза</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Упаковка</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Отправка</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Доп услуги</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Ваши данные</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+										<div class="progress__item">
+											<div class="progress__item-title">Готово</div>
+											<div class="progress__item-info">
+												<div class="progress__item-circle"></div>
+												<div class="progress__item-line"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="quiz-order">
+								<div class="quiz-order__content">
+									<div class="quiz-order__body">
+										<div class="add-quiz" data-tabs>
+											<div class="add-quiz__block">
+												<nav class="add-quiz__navigation" data-tabs-titles>
+													<button type="button" class="add-quiz__title _tab-active">1688</button>
+													<button type="button" class="add-quiz__title _disable">Инвойс от
+														поставщика
+													</button>
+													<button type="button" class="add-quiz__title">
+														TaoBao/AliBaba/Poizon/Другие
+													</button>
+													<button type="button" class="add-quiz__title">Заказать поиск в Китае
+													</button>
+												</nav>
+											</div>
+											<div class="add-quiz__wrapper" data-tabs-body>
+												<div class="add-quiz__body item-quiz-add">
+													<div class="item-quiz-add__wrapper">
+														<div class="item-quiz-add__title">Ссылка 1688.com</div>
+														<div class="item-quiz-add__restrictions">
+															<p>На заказ есть ограничения:</p>
+															<ul>
+																<li>Минимальная стоимость товаров: 50 000 рублей</li>
+															</ul>
+														</div>
+														<div class="item-quiz-add__link">
+															<label class="item-quiz-add__label" for="link-add">Вставьте
+																ссылку с
+																1688.com</label>
+															<div class="item-quiz-add__link-block">
+																<input class="input" id="link-add" autocomplete="off" type="text" name="form[]" placeholder="Вставьте ссылку с 1688.com сюда">
+																<i>
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#copy"></use>
+																	</svg>
+																</i>
+															</div>
+														</div>
+														<div class="item-quiz-add__footer">
+															<div class="item-quiz-add__description">
+																<p>Ссылки с телефонной версии или с мобильного приложения
+																	пока
+																	не поддерживаются.</p>
+																<p>Если у вас несколько товаров, то заносите товары по
+																	очереди.</p>
+															</div>
+															<div class="item-quiz-add__btns _hidden">
+																<button class="button item-quiz-add__next" type="button">
+																	Далее
+																</button>
+															</div>
+														</div>
+													</div>
+													<!--item-product-main -->
+													<div class="item-quiz-add__wrapper">
+														<div class="item-product-main">
+															<div class="item-product-main__img">
+																<img class="ibg" src="img/product/01.webp" alt="Image">
+															</div>
+															<div class="item-product-main__body">
+																<button class="item-product-main__info" type="button" data-popup="#product-info">О товаре и поставщике
+																</button>
+																<a href="" class="item-product-main__title title title_h3">
+																	单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+																	: 【加固圆管】灰 -
+																</a>
+																<div class="item-product-main__price text">
+																	Цена ¥22.5 - 142.1
+																</div>
+															</div>
+															<button class="item-product-main__del btn-del" type="button">
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#del"></use>
+																</svg>
+															</button>
+														</div>
+													</div>
+													<!--end item-product-main -->
+													<!--item-product -->
+													<div class="item-quiz-add__wrapper">
+														<div class="item-product">
+															<div class="item-product__img-block">
+																<div class="item-product__img">
+																	<img src="img/product/01.webp" alt="Image" class="ibg">
+																</div>
+																<a href="" class="item-product__title text item-product__title_mob">单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+																	: 【加固圆管】灰 -</a>
+															</div>
+
+															<div class="item-product__body">
+																<a href="" class="item-product__title text item-product__title_pk">
+																	单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+																	: 【加固圆管】灰 -
+																</a>
+																<div class="item-product__count count-product">
+																	<div class="count-product__item">
+																		<label for="price" class="count-product__label text">Цена</label>
+																		<div class="count-product__block">
+																			<span>¥</span>
+																			<input class="count-product__input" id="price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+																		</div>
+																	</div>
+																	<div class="count-product__item">
+																		<label for="count" class="count-product__label text">Кол-во
+																		</label>
+																		<div class="count-product__quantity quantity" data-quantity="">
+																			<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+																			<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="count" name="form[]" value="1"></div>
+																			<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+																		</div>
+																	</div>
+																	<div class="count-product__item">
+																		<div class="count-product__total">
+																			<div class="count-product__total-text">Сумма:
+																			</div>
+																			<div class="count-product__total-value">¥6056.00
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="item-product__message">
+																<textarea autocomplete="off" name="form[]" placeholder="Комментарий" class="input"></textarea>
+
+															</div>
+														</div>
+													</div>
+													<!--end item-product -->
+													<!--item-product -->
+													<div class="item-quiz-add__wrapper">
+														<div class="item-product">
+															<div class="item-product__img-block">
+																<div class="item-product__img">
+																	<img src="img/product/01.webp" alt="Image" class="ibg">
+																</div>
+																<a href="" class="item-product__title text item-product__title_mob">单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+																	: 【加固圆管】灰 -</a>
+															</div>
+
+															<div class="item-product__body">
+																<a href="" class="item-product__title text item-product__title_pk">
+																	单人午休折叠床床垫一体办公室携式躺椅椅子医院陪护床简易午睡床
+																	: 【加固圆管】灰 -
+																</a>
+																<div class="item-product__count count-product">
+																	<div class="count-product__item">
+																		<label for="price2" class="count-product__label text">Цена</label>
+																		<div class="count-product__block">
+																			<span>¥</span>
+																			<input class="count-product__input" id="price2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+																		</div>
+																	</div>
+																	<div class="count-product__item">
+																		<label for="count2" class="count-product__label text">Кол-во
+																		</label>
+																		<div class="count-product__quantity quantity" data-quantity="">
+																			<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+																			<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="count2" name="form[]" value="1"></div>
+																			<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+																		</div>
+																	</div>
+																	<div class="count-product__item">
+																		<div class="count-product__total">
+																			<div class="count-product__total-text">Сумма:
+																			</div>
+																			<div class="count-product__total-value">¥6056.00
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="item-product__message">
+																<textarea autocomplete="off" name="form[]" placeholder="Комментарий" class="input"></textarea>
+
+															</div>
+														</div>
+													</div>
+													<!--end item-product -->
+													<div class="item-quiz-add__footer-mob">
+														<button class="button item-quiz-add__next" type="button">Далее
+														</button>
+													</div>
+												</div>
+												<div class="add-quiz__body item-quiz-add"></div>
+												<div class="add-quiz__body item-quiz-add">
+													<div class="item-quiz-add__wrapper">
+														<div class="supplier">
+															<div class="supplier__title">
+																TaoBao/AliBaba/Poizon/Другие
+															</div>
+															<div class="item-quiz-add__btns _hidden">
+																<button class="button item-quiz-add__next" type="button">
+																	Далее
+																</button>
+															</div>
+														</div>
+													</div>
+													<div class="item-quiz-add__wrapper">
+														<div class="supplier-product">
+															<div class="supplier-product__item">
+																<div class="supplier-product__top">
+																	<div class="supplier-product__title title title_h3">
+																		Поставщик
+																	</div>
+																	<button class="supplier-product__del btn-del" type="button">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#del"></use>
+																		</svg>
+																	</button>
+																</div>
+																<div class="supplier-product__form form">
+																	<div class="form__row form__row_flex">
+																		<div class="form__column">
+																			<label for="s-name" class="form__label">Название</label>
+																			<input class="input" id="s-name" autocomplete="off" type="text" name="form[]" placeholder="Название">
+																		</div>
+																		<div class="form__column">
+																			<label for="s-contacts" class="form__label">Контакты</label>
+																			<input class="input" id="s-contacts" autocomplete="off" type="text" name="form[]" placeholder="Шанхай, улица Сяо Миня, д. 1">
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="supplier-product__item">
+																<div class="supplier-product__title title title_h3">Товар
+																</div>
+																<div class="supplier-product__images">
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="supplier-product__item">
+																<div class="form form_flex">
+																	<div class="form__left">
+																		<div class="form__row">
+																			<label for="p-name" class="form__label">Название</label>
+																			<input class="input" id="p-name" autocomplete="off" type="text" name="form[]" placeholder="Лежанка удобная">
+																		</div>
+																		<div class="form__row">
+																			<label for="p-link" class="form__label">Ссылка</label>
+																			<input class="input" id="p-link" autocomplete="off" type="text" name="form[]" placeholder="https://taobao.com/gdfgkjgj56456456">
+																		</div>
+																		<div class="form__row">
+																			<div class="form__count count-product">
+																				<div class="count-product__item">
+																					<label for="p-price" class="count-product__label text">Цена</label>
+																					<div class="count-product__block">
+																						<span>¥</span>
+																						<input class="count-product__input" id="p-price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+																					</div>
+																				</div>
+																				<div class="count-product__item">
+																					<label for="p-count" class="count-product__label text">Кол-во
+																					</label>
+																					<div class="count-product__quantity quantity" data-quantity="">
+																						<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+																						<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="p-count" name="form[]" value="1"></div>
+																						<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+																					</div>
+																				</div>
+																				<div class="count-product__item">
+																					<div class="count-product__total">
+																						<div class="count-product__total-text">
+																							Сумма:
+																						</div>
+																						<div class="count-product__total-value">
+																							¥6056.00
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form__right">
+																		<textarea autocomplete="off" name="form[]" placeholder="Комментарий" data-error="Ошибка" class="input"></textarea>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="item-quiz-add__more">
+														<button class="item-quiz-add__btn button button_light" type="button">
+															Добавить товар <i>+</i>
+														</button>
+													</div>
+													<div class="item-quiz-add__footer-mob">
+														<button class="button item-quiz-add__next" type="button">Далее
+														</button>
+													</div>
+												</div>
+												<div class="add-quiz__body item-quiz-add">
+													<div class="item-quiz-add__wrapper">
+														<div class="supplier">
+															<div class="supplier__title">
+																Заказать поиск в Китае
+															</div>
+															<button class="button _hidden" type="button">
+																Отправить заказ
+															</button>
+														</div>
+													</div>
+													<div class="item-quiz-add__wrapper">
+														<div class="supplier-product">
+															<div class="supplier-product__item">
+																<div class="supplier-product__top">
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<button class="supplier-product__del btn-del" type="button">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#del"></use>
+																		</svg>
+																	</button>
+																</div>
+															</div>
+															<div class="supplier-product__item">
+																<div class="supplier-product__images">
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																	<div class="js-upload-block" data-type="image">
+																		<div class="supplier-product__img">
+																			<input type="file" class="js-upload-input" accept="image/*" hidden>
+																			<button type="button" class="js-upload-img supplier-product__img-content">
+																				<i>
+																					<svg>
+																						<use xlink:href="img/icons/icons.svg#img"></use>
+																					</svg>
+																				</i>
+																				<span>Добавить фото</span>
+																			</button>
+																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="supplier-product__item">
+																<div class="form form_flex">
+																	<div class="form__left">
+																		<div class="form__row">
+																			<label for="p-name" class="form__label">Название</label>
+																			<input class="input" id="p2-name" autocomplete="off" type="text" name="form[]" placeholder="Лежанка удобная">
+																		</div>
+																		<div class="form__row">
+																			<label for="p-link" class="form__label">Ссылка</label>
+																			<input class="input" id="p2-link" autocomplete="off" type="text" name="form[]" placeholder="https://taobao.com/gdfgkjgj56456456">
+																		</div>
+																		<div class="form__row">
+																			<div class="form__count count-product">
+																				<div class="count-product__item">
+																					<label for="p2-price" class="count-product__label text">Цена</label>
+																					<div class="count-product__block">
+																						<span>¥</span>
+																						<input class="count-product__input" id="p2-price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+																					</div>
+																				</div>
+																				<div class="count-product__item">
+																					<label for="p2-count" class="count-product__label text">Кол-во
+																					</label>
+																					<div class="count-product__quantity quantity" data-quantity="">
+																						<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+																						<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="p2-count" name="form[]" value="1"></div>
+																						<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+																					</div>
+																				</div>
+																				<div class="count-product__item">
+																					<div class="count-product__total">
+																						<div class="count-product__total-text">
+																							Сумма:
+																						</div>
+																						<div class="count-product__total-value">
+																							¥6056.00
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form__right">
+																		<textarea autocomplete="off" name="form[]" placeholder="Комментарий" data-error="Ошибка" class="input"></textarea>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="item-quiz-add__more">
+														<button class="item-quiz-add__btn button button_light" type="button">
+															Добавить товар <i>+</i>
+														</button>
+													</div>
+													<div class="item-quiz-add__footer-mob">
+														<button class="button" type="button">Отправить заказ</button>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="cargo">
+												<div class="cargo__radio options">
+													<div class="options__item">
+														<input id="cargo_1" class="options__input" checked type="radio" value="1" name="cargo">
+														<label for="cargo_1" class="options__label">
+															<span class="options__text">Я знаю количество и&nbsp;размер</span>
+														</label>
+													</div>
+													<div class="options__item">
+														<input id="cargo_2" class="options__input" type="radio" value="2" name="cargo">
+														<label for="cargo_2" class="options__label">
+															<span class="options__text">Не знаю количество и&nbsp;размер</span>
+														</label>
+													</div>
+												</div>
+												<div class="cargo__content">
+													<div class="cargo__body">
+														<div class="cargo__info form">
+															<div class="cargo__item">
+																<div class="cargo__title">Данные груза</div>
+																<div class="cargo__item-type">
+																	<div class="form__label">Тип груза</div>
+																	<div class="cargo__item-block info-block">
+																		<div class="info-block__select">
+																			<select name="form[]" data-class-modif="form">
+																				<option value="" selected>Тип груза</option>
+																				<option value="1">Хозтовары</option>
+																				<option value="2">Одежда</option>
+																			</select>
+																		</div>
+
+																		<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+																			<svg>
+																				<use xlink:href="img/icons/icons.svg#info"></use>
+																			</svg>
+																		</button>
+																	</div>
+																</div>
+															</div>
+															<div class="cargo__item">
+																<div class="cargo__title">Добавление мест</div>
+																<div class="cargo__item-add">
+																	<div class="cargo__item-row form__row form__row_flex">
+																		<div class="form__column">
+																			<label class="form__label" for="c-length">Длина,
+																				см</label>
+																			<input class="input" id="c-length" autocomplete="off" type="text" name="form[]" placeholder="0">
+																		</div>
+																		<div class="form__column">
+																			<label class="form__label" for="c-width">Ширина,
+																				см</label>
+																			<input class="input" id="c-width" autocomplete="off" type="text" name="form[]" placeholder="0">
+																		</div>
+																		<div class="form__column">
+																			<label class="form__label" for="c-height">Высота,
+																				см</label>
+																			<input class="input" id="c-height" autocomplete="off" type="text" name="form[]" placeholder="0">
+																		</div>
+																		<div class="form__column">
+																			<label class="form__label" for="c-weight">Вес,
+																				кг</label>
+																			<input class="input" id="c-weight" autocomplete="off" type="text" name="form[]" placeholder="0">
+																		</div>
+																	</div>
+																	<div class="form__row">
+																		<label class="form__label" for="c-count">Кол-во
+																			мест</label>
+																		<div class="cargo__item-block info-block">
+																			<div class="info-block__qa quantity" data-quantity="">
+																				<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+																				<div class="quantity__input"><input data-quantity-value autocomplete="off" id="c-count" type="text" name="form[]" value="1">
+																				</div>
+																				<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+																			</div>
+																			<button class="info-block__del" type="button">
+																				<svg>
+																					<use xlink:href="img/icons/icons.svg#del"></use>
+																				</svg>
+																			</button>
+																			<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+																				<svg>
+																					<use xlink:href="img/icons/icons.svg#info"></use>
+																				</svg>
+																			</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="quiz-order__footer">
+																<button class="cargo__btn button" type="button">Добавить
+																	место
+																	<i>+</i></button>
+																<div class="item-quiz-add__btns">
+																	<button class="button button_light item-quiz-add__prev" type="button">
+																		Назад
+																	</button>
+																	<button class="button item-quiz-add__next" type="button">
+																		Далее
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="cargo__body">
+														<div class="cargo__title">
+															Ничего страшного! Менеджер свяжется с&nbsp;вами и&nbsp;уточнит
+															детали
+														</div>
+														<div class="quiz-order__footer _one">
+															<div class="item-quiz-add__btns">
+																<button class="button button_light item-quiz-add__prev" type="button">
+																	Назад
+																</button>
+																<button class="button item-quiz-add__next" type="button">
+																	Далее
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="package">
+												<div class="package__title">
+													Выбор упаковки
+												</div>
+												<ul class="package__list">
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Обрешетка
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Обычная упаковка
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Мягкая упаковка
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Паллет
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Деревянный ящик
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Бумажный уголок
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+													<li class="package__item item-package">
+														<div class="item-package__left">
+															<div class="item-package__left-block">
+																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#info-i"></use>
+																	</svg>
+																</button>
+																<div class="item-package__text">
+																	Комбинированная
+																</div>
+															</div>
+															<div class="item-package__price item-package__price_mob">329,86
+																₽ / 3.71 $
+															</div>
+														</div>
+														<div class="item-package__right">
+															<div class="item-package__price item-package__price_pk">329,86 ₽
+																/ 3.71 $
+															</div>
+															<label class="item-package__switch switch">
+																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<span class="switch__slider"></span>
+															</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="quiz-order__footer _one">
+												<div class="item-quiz-add__btns">
+													<button class="button button_light item-quiz-add__prev" type="button">
+														Назад
+													</button>
+													<button class="button item-quiz-add__next" type="button">
+														Далее
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="sending">
+												<div class="sending__item">
+													<div class="sending__title">
+														Доставка по Китаю
+													</div>
+													<div class="sending__item-info item-sending-info">
+														<div class="item-sending-info__left">
+															<div class="item-sending-info__left-block">
+																<strong>Доставка по Китаю</strong>
+																<small>доставляет поставщик</small>
+															</div>
+														</div>
+														<div class="item-sending-info__middle">
+															<textarea class="item-sending-info__input input" autocomplete="off" type="text" name="form[]" placeholder="¥ Введите данные"></textarea>
+														</div>
+													</div>
+												</div>
+												<div class="sending__item">
+													<div class="sending__title">
+														Доставка из Китая в РФ
+													</div>
+													<div class="sending__item-wrapper">
+														<div class="sending__item-info item-sending-info item-sending-info_sb">
+															<div class="item-sending-info__left">
+																<div class="item-sending-info__left-block">
+																	<strong>Быстрое авто</strong>
+																	<small>12-18 дней</small>
+																</div>
+																<div class="item-sending-info__price item-sending-info__price_mob">
+																	112
+																	194,81 ₽
+																</div>
+															</div>
+															<div class="item-sending-info__right">
+																<div class="item-sending-info__price item-sending-info__price_pk">
+																	112
+																	194,81 ₽
+																</div>
+																<label class="item-sending-info__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</div>
+														<div class="sending__item-info item-sending-info item-sending-info_sb">
+															<div class="item-sending-info__left">
+																<div class="item-sending-info__left-block">
+																	<strong>Медленное авто</strong>
+																	<small>18-30 дней</small>
+																</div>
+																<div class="item-sending-info__price item-sending-info__price_mob">
+																	112
+																	194,81 ₽
+																</div>
+															</div>
+															<div class="item-sending-info__right">
+																<div class="item-sending-info__price item-sending-info__price_pk">
+																	112
+																	194,81 ₽
+																</div>
+																<label class="item-sending-info__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="sending__item">
+													<div class="sending__title">
+														Доставка по РФ
+													</div>
+													<div class="sending__item-wrapper">
+														<div class="sending__item-info item-sending-info item-sending-info_3">
+															<div class="item-sending-info__left">
+																<div class="item-sending-info__left-block">
+																	<strong>Фулфилмент</strong>
+																	<small>Москва, ул Туполева 25</small>
+																</div>
+																<div class="item-sending-info__price item-sending-info__price_mob">
+																	112
+																	194,81 ₽
+																</div>
+															</div>
+															<div class="item-sending-info__middle">
+																<div class="item-sending-info__text">
+																	Пн - Вс 8:00 - 18:00
+																</div>
+																<button class="item-sending-info__link" type="button" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.">
+																	Условия хранения
+																</button>
+															</div>
+															<div class="item-sending-info__right">
+																<div class="item-sending-info__price item-sending-info__price_pk">
+																	112
+																	194,81 ₽
+																</div>
+																<label class="item-sending-info__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</div>
+														<div class="sending__item-info item-sending-info item-sending-info_3">
+															<div class="item-sending-info__left">
+																<div class="item-sending-info__left-block">
+																	<strong>Доставка</strong>
+																	<small>Крым, ул Васильева 19</small>
+																</div>
+																<div class="item-sending-info__price item-sending-info__price_mob">
+																	112
+																	194,81 ₽
+																</div>
+															</div>
+															<div class="item-sending-info__middle sending-info-address">
+																<div class="sending-info-address__inner">
+																	<!--sending-info-address__input добавляем новый адрес-->
+																	<input class="sending-info-address__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_1" readonly="">
+																	<!--end sending-info-address__input -->
+
+																	<button class="sending-info-address__btn button button_light" data-popup="#add-address" type="button">
+																		<i>+</i>Добавить новый адрес
+																	</button>
+																</div>
+															</div>
+															<div class="item-sending-info__right">
+																<div class="item-sending-info__price item-sending-info__price_pk">
+																	112
+																	194,81 ₽
+																</div>
+																<label class="item-sending-info__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</div>
+														<div class="sending__item-info item-sending-info item-sending-info_3">
+															<div class="item-sending-info__left">
+																<div class="item-sending-info__left-block">
+																	<strong>Самовывоз</strong>
+																	<small>Воронеж, ул Жукова 29</small>
+																</div>
+																<div class="item-sending-info__price item-sending-info__price_mob">
+																	112
+																	194,81 ₽
+																</div>
+															</div>
+															<div class="item-sending-info__middle">
+																<div class="item-sending-info__text">
+																	Вт - Сб 9:00 - 15:00
+																</div>
+																<button class="item-sending-info__link" type="button" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.">
+																	Условия хранения
+																</button>
+															</div>
+															<div class="item-sending-info__right">
+																<div class="item-sending-info__price item-sending-info__price_pk">
+																	112
+																	194,81 ₽
+																</div>
+																<label class="item-sending-info__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="quiz-order__footer _one">
+												<div class="item-quiz-add__btns">
+													<button class="button button_light item-quiz-add__prev" type="button">
+														Назад
+													</button>
+													<button class="button item-quiz-add__next" type="button">
+														Далее
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="package">
+												<div class="package__block">
+													<div class="package__title">
+														Проверка
+													</div>
+													<ul class="package__list">
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Детальная проверка
+
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Возврат
+
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Отдельное фото/видео каждого товара
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Взвешивание
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Замер размеров товара
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Примерка товара на живом человеке
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Отбраковка (проверка на работоспособность)
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Осмотр товара на дефекты
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Подробный видео обзор
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+													</ul>
+												</div>
+												<div class="package__block">
+													<div class="package__title">
+														Страховка
+													</div>
+													<ul class="package__list">
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Без страховки
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Стандартная страховка
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+														<li class="package__item item-package">
+															<div class="item-package__left">
+																<div class="item-package__left-block">
+																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#info-i"></use>
+																		</svg>
+																	</button>
+																	<div class="item-package__text">
+																		Расширенная страховка
+																	</div>
+																</div>
+																<div class="item-package__price item-package__price_mob">
+																	329,86
+																	₽ / 3.71 $
+																</div>
+															</div>
+															<div class="item-package__right">
+																<div class="item-package__price item-package__price_pk">
+																	329,86 ₽
+																	/ 3.71 $
+																</div>
+																<label class="item-package__switch switch">
+																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<span class="switch__slider"></span>
+																</label>
+															</div>
+														</li>
+													</ul>
+												</div>
+
+											</div>
+											<div class="quiz-order__footer _one">
+												<div class="item-quiz-add__btns">
+													<button class="button button_light item-quiz-add__prev" type="button">
+														Назад
+													</button>
+													<button class="button item-quiz-add__next" type="button">
+														Далее
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="contacts-order form_order ">
+												<div class="contacts-order__item">
+													<div class="contacts-order__title">Ваши данные</div>
+													<div class="contacts-order__item-info">
+														<div class="form__row form__row_flex">
+															<div class="form__column">
+																<label for="cname_1" class="form__label">ФИО</label>
+																<input class="input" readonly id="cname_1" autocomplete="off" type="text" name="form[]" value="Иван" placeholder="">
+															</div>
+															<div class="form__column">
+																<label for="cphone_1" class="form__label">Телефон</label>
+																<input class="input" readonly id="cphone_1" autocomplete="off" type="text" name="form[]" value="+7 (977) 696-77-78" placeholder="">
+															</div>
+															<div class="form__column">
+																<label for="cmail_1" class="form__label">Email</label>
+																<input class="input" readonly id="cmail_1" autocomplete="off" type="text" name="form[]" value="penjali@yandex.ru" placeholder="">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="contacts-order__item">
+													<div class="contacts-order__title">Мои компании</div>
+													<div class="item-info-profile item-info-profile_company">
+														<div class="item-info-profile__text text">Добавьте реквизиты
+															организаций для быстрого
+															выставления счета
+														</div>
+														<div class="item-info-profile__company company-info">
+															<div class="company-info__item">
+																<div class="company-info__content">
+																	<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
+																</div>
+																<div class="company-info__add">
+																	<button class="item-info-profile__btn button button_light" data-popup="#new-company" type="button"><i>+</i>
+																		Выбрать компанию
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="contacts-order__item">
+													<div class="contacts-order__title">Мои адреса</div>
+													<div class="item-info-profile item-info-profile_address">
+														<div class="item-info-profile__text text">Добавьте адреса доставок
+															для быстрого заполнения в
+															заявке
+														</div>
+														<div class="item-info-profile__company company-info">
+															<div class="company-info__item">
+																<div class="company-info__content">
+																	<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_1" readonly>
+																</div>
+																<div class="company-info__add">
+																	<button class="item-info-profile__btn button button_light" data-popup="#add-address" type="button">
+																		<i>+</i>Добавить новый адрес
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="contacts-order__item">
+													<div class="contacts-order__title">Способ оплаты и&nbsp;доставки</div>
+													<div class="item-info-profile">
+														<div class="item-info-profile__text text">Тип плательщика</div>
+														<div class="item-info-profile__company company-info">
+															<div class="company-info__labels">
+																<div class="options options_payments">
+																	<div class="options__item">
+																		<input id="op_1" class="options__input" checked type="radio" value="1" name="option">
+																		<label for="op_1" class="options__label">
+																			<span class="options__text">Физ.лицо</span>
+																		</label>
+																	</div>
+																	<div class="options__item">
+																		<input id="op_2" class="options__input" type="radio" value="2" name="option">
+																		<label for="op_2" class="options__label">
+																			<span class="options__text">ИП или ООО без НДС</span>
+																		</label>
+																	</div>
+																	<div class="options__item">
+																		<input id="op_3" class="options__input" type="radio" value="2" name="option">
+																		<label for="op_3" class="options__label">
+																			<span class="options__text">ООО с НДС</span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="contacts-order__item">
+													<textarea autocomplete="off" name="form[]" placeholder="Комментарий к товару
+" class="form__textarea input"></textarea>
+													<div class="checkbox checkbox_order-contacts">
+														<input id="co_1" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+														<label for="co_1" class="checkbox__label">
+															<span class="checkbox__text">Согласен, что стоимость доставки может измениться после измерения груза на нашем складе в&nbsp;Китае</span>
+														</label>
+													</div>
+
+													<button class="contacts-order__btn item-quiz-add__next button" type="button">Отправить заказ
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="quiz-order__body">
+										<div class="quiz-order__inner">
+											<div class="full-order">
+												<div class="full-order__title">Готов</div>
+												<div class="full-order__text text">Ваш заказ отправлен, скоро с вами свяжется менеджер</div>
+												<a href="" class="full-order__btn button">Перейти в заказы</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="create-order__right">
+							<div class="create-order__total-sticky">
+								<div class="create-order__total">
+									<div class="create-order__total-label text text_xl">Итого</div>
+									<div class="create-order__total-value text text_xl">ХХ ХХХ ₽</div>
+								</div>
+								<div class="create-order__calc">
+									<div class="calc-create-item">
+										<div class="calc-create-item__top">
+											<div class="calc-create-item__title title title_h4">Выкуп</div>
+											<button class="calc-create-item__btn button" type="button">Очистить заказ
+											</button>
+										</div>
+										<div class="calc-create-item__content text">
+											<div class="calc-create-item__label">Стоимость товара</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Доставка по Китаю</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label beige-label">Комиссия <u class="beige-label__icon">Х%</u></div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Детальная проверка</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Итого выкуп</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+										</div>
+									</div>
+									<div class="calc-create-item">
+										<div class="calc-create-item__top">
+											<div class="calc-create-item__title title title_h4">Данные груза</div>
+										</div>
+										<div class="calc-create-item__content text">
+											<div class="calc-create-item__label">Количество мест</div>
+											<div class="calc-create-item__value">ХХ шт</div>
+											<div class="calc-create-item__label">Общий объем</div>
+											<div class="calc-create-item__value">ХХ м3</div>
+											<div class="calc-create-item__label">Общий вес ХХ к</div>
+											<div class="calc-create-item__value"> ХХ к</div>
+											<div class="calc-create-item__label">Средняя плотность</div>
+											<div class="calc-create-item__value"> ХХ кг/м3</div>
+										</div>
+									</div>
+									<div class="calc-create-item">
+										<div class="calc-create-item__top">
+											<div class="calc-create-item__title title title_h4">Доставка</div>
+										</div>
+										<div class="calc-create-item__content text">
+											<div class="calc-create-item__label">Упаковка груза</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Доставка в РФ</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Страховка</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Рыночный сбор</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+											<div class="calc-create-item__label">Итого доставка</div>
+											<div class="calc-create-item__value">ХХ ХХХ ₽</div>
+										</div>
+									</div>
+								</div>
+								<div class="create-order__sum">
+									<div class="create-order__sum-item"><span>$</span>81.14</div>
+									<div class="create-order__sum-item"><span>¥</span>11.09</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__inner">
+					<div class="footer__left left-footer">
+						<div class="left-footer__item">
+							<a href="tel:+73332220088" class="left-footer__link">+7 (333) 222-00-88</a> <span>/</span>
+							<a href="tel:+72223331177" class="left-footer__link">+7 (222) 333-11-77</a>
+						</div>
+						<div class="left-footer__item">
+							<a href="mailto:Topchinalogistics@mail.com" class="left-footer__link">Topchinalogistics@mail.com</a>
+						</div>
+					</div>
+					<div class="footer__right">
+						<div class="footer__documents">
+							<div class="footer__text">© 2025, ООО «Top China Logistics»</div>
+							<a href="" class="footer__link">Пользовательское соглашение</a>
+							<a href="" class="footer__link">Политика конфиденциальности</a>
+							<div class="footer__social">
+								<a href="" class="footer__social-item">
+									<span>Telegram</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+
+								</a>
+								<a href="" class="footer__social-item">
+									<span>WhatsaApp</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+								</a>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<div class="footer__menu-title">Меню:</div>
+							<ul>
+								<li><a href="">Моя панель</a></li>
+								<li><a href="">Мои заказы</a></li>
+								<li><a href="">Инструкции</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div id="add-address" aria-hidden="true" class="popup popup_sm">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__add add-popup">
+						<div class="add-popup__title">Добавить адрес</div>
+						<div class="add-popup__form form">
+							<form action="">
+								<div class="form__inner">
+									<div class="form__row">
+										<label class="form__label" for="p-address">Адрес доставки</label>
+										<input class="input" id="p-address" autocomplete="off" type="text" name="form[]" placeholder="Введите адрес доставки">
+									</div>
+									<div class="form__row">
+										<label class="form__label" for="p-komm">Комментарий</label>
+										<textarea class="input" id="p-komm" autocomplete="off" type="text" name="form[]" placeholder="Ваш комментарий"></textarea>
+									</div>
+									<div class="form__row">
+										<div class="checkbox">
+											<input id="p_ch2" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="p_ch2" class="checkbox__label">
+												<span class="checkbox__text">Сделать адресом по умолчанию</span>
+											</label>
+										</div>
+									</div>
+									<div class="form__row">
+										<button class="form__button button" type="button">Сохранить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="new-company" aria-hidden="true" class="popup popup_sm">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__add add-popup">
+						<div class="add-popup__title">Добавить компанию</div>
+						<div class="add-popup__form form">
+							<form action="">
+								<div class="form__inner">
+									<div class="form__row">
+										<label class="form__label" for="p-company">Название компании</label>
+										<input class="input" id="p-company" autocomplete="off" type="text" name="form[]" placeholder="Название компании">
+									</div>
+									<div class="form__row">
+										<label class="form__label" for="p-inn">ИНН</label>
+										<input class="input" id="p-inn" autocomplete="off" type="text" name="form[]" placeholder="Введите ИНН">
+									</div>
+									<div class="form__row">
+										<div class="js-upload-block" data-type="document">
+											<button class="add-popup__btn js-upload-btn" type="button"><i>+</i> Добавить файл
+											</button>
+											<input type="file" accept=".pdf,.doc,.docx,.txt" class="js-upload-input" hidden>
+											<div class="add-popup__text text js-upload-filename"></div>
+										</div>
+									</div>
+									<div class="form__row">
+										<div class="checkbox">
+											<input id="p_ch1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="p_ch1" class="checkbox__label">
+												<span class="checkbox__text">Компания с НДС</span>
+											</label>
+										</div>
+									</div>
+									<div class="form__row">
+										<button class="form__button button" type="submit">Сохранить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="product-info" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="product-popup">
+						<div class="product-popup__wrapper">
+							<div class="product-popup__left" data-da="#product-info .product-popup__right, 767.98">
+								<div class="product-popup__slider">
+									<div class="swiper product-main">
+										<div class="product-main__wrapper swiper-wrapper">
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/01.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/03.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/04.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/05.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/06.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-main__slide swiper-slide">
+												<div class="product-main__img">
+													<img class="ibg" src="img/product/popup/main/07.webp" alt="Image">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="swiper product-thumbs">
+										<div class="product-thumbs__wrapper swiper-wrapper">
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/01.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/03.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/04.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/05.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/06.webp" alt="Image">
+												</div>
+											</div>
+											<div class="product-thumbs__slide swiper-slide">
+												<div class="product-thumbs__img">
+													<img class="ibg" src="img/product/popup/thumbs/07.webp" alt="Image">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="product-popup__loading loading">
+									<div class="loading__text">
+										Загружаем данные о поставщике ...
+									</div>
+									<div class="loading__lines">
+										<div class="loading__line"></div>
+										<div class="loading__line"></div>
+									</div>
+								</div>
+								<div class="product-popup__info info-product-popup">
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label info-block">
+											<div class="info-block__text">На платформе</div>
+											<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#info"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="info-product-popup__value">Да</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label info-block">
+											<div class="info-block__text">Рейтинг продаж</div>
+											<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus" type="button">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#info"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="info-product-popup__value">4.5</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Отзывы клиентов</div>
+										<div class="info-product-popup__value">4.3</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Возвраты товара</div>
+										<div class="info-product-popup__value">Да</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Качество товара</div>
+										<div class="info-product-popup__value">Отличное</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Сроки доставки</div>
+										<div class="info-product-popup__value">До 100 дней</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Тех. поддержка</div>
+										<div class="info-product-popup__value">Да</div>
+									</div>
+									<div class="info-product-popup__item">
+										<div class="info-product-popup__label">Консультирование</div>
+										<div class="info-product-popup__value">Да</div>
+									</div>
+								</div>
+							</div>
+							<div class="product-popup__right product-content">
+								<div class="product-content__top">
+									<div class="product-content__title">单人午休折叠床床垫一体办公室</div>
+									<a href="" class="product-content__link">Смотреть на 1688</a>
+								</div>
+								<div class="product-content__price">
+									<ul>
+										<li class="price-rub">352,96 - 352,96 ₽</li>
+										<li class="price-yen">22,50 - 22,50 ¥</li>
+									</ul>
+								</div>
+								<div class="product-content__models models-product">
+									<div class="models-product__title">
+										Модели товара
+									</div>
+									<div class="models-product__inner">
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+										<div class="models-product__item item-model">
+											<div class="item-model__col item-model__img">
+												<img class="ibg" src="img/product/01.webp" alt="Image">
+												<a href="" class="item-model__title">颜色:</a>
+											</div>
+											<div class="item-model__col item-model__count">19506 шт</div>
+											<div class="item-model__col item-model__price">
+												<div class="item-model__price-rub">352,96 ₽</div>
+												<div class="item-model__price-yen">22,50 ¥</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="js/app.min.js?_v=20250729145226"></script>
+</body>
+
+</html>

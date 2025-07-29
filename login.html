@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Вход в аккаунт</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__inner">
+					<a href="/" class="header__logo logo logo_reg"><img src="img/logo.svg" alt="Logo"></a>
+					<div class="header__links">
+						<a href="">Telegram</a>
+						<a href="">WhatsaApp</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page_reg">
+			<section class="form-registration">
+				<div class="form-registration__container">
+					<div class="form-registration__content">
+						<h1 class="form-registration__title title">Вход в аккаунт</h1>
+						<div class="form form_registration">
+							<form action="">
+								<div class="form__inner">
+									<div class="form__row">
+										<!--для ошибки для input добавить класс _form-error-->
+										<div class="form__input">
+											<label class="form__label" for="mail">E-mail</label>
+											<input class="input" autocomplete="off" type="text" id="mail" name="form[]" placeholder="Ivan.vos@mail.ru">
+										</div>
+										<!--end  input-->
+									</div>
+									<div class="form__row">
+										<!--для ошибки для input добавить класс _form-error-->
+										<div class="form__input">
+											<label class="form__label" for="password">Пароль</label>
+											<input class="input" autocomplete="off" type="password" id="password" name="form[]" placeholder="Введите пароль">
+										</div>
+										<!--end  input-->
+									</div>
+									<div class="form__row">
+										<div class="btns-group btns-group_col">
+											<a href="" class="btns-group__btn button">Войти</a>
+											<a href="" class="btns-group__btn button button_outline">Регистрация</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer footer_reg">
+			<div class="footer__container">
+				<div class="footer__text">© 2025, ООО «Top China Logistics»</div>
+				<a href="" class="footer__link">Политика конфиденциальности</a>
+				<div class="footer__social">
+					<a href="" class="footer__social-item">
+						<span>Telegram</span>
+						<i>
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</i>
+
+					</a>
+					<a href="" class="footer__social-item">
+						<span>WhatsaApp</span>
+						<i>
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</i>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20250729145226"></script>
+</body>
+
+</html>

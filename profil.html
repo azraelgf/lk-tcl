@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Профиль</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__inner">
+					<a href="/" class="header__logo logo"><img src="img/logo.svg" alt="Logo"></a>
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#" class="menu__link">Моя панель</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Мои заказы</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Инструкции</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__links" data-da=".menu__body, 1199.98">
+							<a href="">
+								Telegram
+							</a>
+							<a href="">
+								WhatsaApp
+							</a>
+						</div>
+						<div class="header__contacts" data-da=".menu__body, 1199.98">
+							<a href="tel:+73332220088">+7 (333) 222-00-88</a>
+							<a href="mailto:Topchinalogistics@mail.com">Topchinalogistics@mail.com</a>
+						</div>
+						<button class="header__btn button button_create" data-da=".menu__body, 1199.98" type="button">Создать
+							заказ <i>+</i></button>
+						<div class="header__ava">
+							<img src="img/avatars/ava.webp" alt="Image">
+							<strong>Иван Колодий</strong>
+							<div class="ava-submenu">
+								<ul class="ava-submenu__list">
+									<li>
+
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#profile"></use>
+											</svg>
+											<span>Мой профиль</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#draft"></use>
+											</svg>
+											<span>Мои черновики</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#exit"></use>
+											</svg>
+											<span>Выйти</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page page_inner">
+			<section class="section profile">
+				<div class="profile__container">
+					<h1 class="profile__title title title_h1">Профиль</h1>
+					<div class="profile__inner">
+						<div class="profile__left">
+							<div class="profile__detail detail-profile js-upload-block" data-type="image">
+								<div class="detail-profile__img">
+									<div class="detail-profile__icon">
+										<img class="ibg js-upload-preview" src="img/avatars/ava.webp" alt="Image">
+									</div>
+								</div>
+								<div class="detail-profile__body">
+									<div class="detail-profile__min">
+										<span>Минимальная сумма заказа</span>
+										<strong>ХХ ХХХ ₽</strong>
+									</div>
+									<div class="detail-profile__name" data-da=".detail-profile__img, 479.98">
+										<strong>Кирилл Жуков</strong>
+										<span>№04061</span>
+									</div>
+									<div class="detail-profile__btn">
+										<button class="detail-profile__link js-upload-btn" type="button">Изменить фото</button>
+										<input accept=".webp, .webp, .webp" type="file" name="image" class="detail-profile__file js-upload-input" hidden>
+									</div>
+								</div>
+							</div>
+							<div class="profile__form">
+								<div class="form form_main">
+									<form action="">
+										<div class="form__title">Контактные данные</div>
+										<div class="form__inner">
+											<div class="form__row">
+												<label class="form__label" for="fio">ФИО</label>
+												<input class="input" id="fio" autocomplete="off" type="text" name="form[]" placeholder="Введите фамилию">
+											</div>
+											<div class="form__row">
+												<label class="form__label" for="mail">E-mail</label>
+												<input class="input" id="mail" autocomplete="off" type="text" name="form[]" placeholder="Введите e-mail">
+											</div>
+											<div class="form__row">
+												<label class="form__label" for="phone">Телефон</label>
+												<input class="input" id="phone" autocomplete="off" type="text" name="form[]" placeholder="+7 (999) 999-99-99">
+											</div>
+											<div class="form__row">
+												<label class="form__label" for="phone2">Телефон</label>
+												<input class="input" id="phone2" autocomplete="off" type="text" name="form[]" placeholder="+7 (999) 999-99-99">
+											</div>
+											<div class="form__row">
+												<button class="form__button button" type="submit">Сохранить изменения
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="profile__info">
+							<div class="item-info-profile item-info-profile_company">
+								<div class="item-info-profile__title text text_xl">Мои компании</div>
+								<div class="item-info-profile__text text">Добавьте реквизиты организаций для быстрого
+									выставления счета
+								</div>
+								<div class="item-info-profile__company company-info">
+									<div class="company-info__item">
+										<div class="company-info__content">
+											<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
+											<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ2" type="text" name="company_inn" readonly>
+											<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ3" type="text" name="company_inn2" readonly>
+										</div>
+										<div class="company-info__add">
+											<button class="item-info-profile__btn button button_light" data-popup="#new-company" type="button"><i>+</i> Добавить новую
+												компанию
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-info-profile item-info-profile_address">
+								<div class="item-info-profile__title text text_xl">Мои адреса</div>
+								<div class="item-info-profile__text text">Добавьте адреса доставок для быстрого заполнения в
+									заявке
+								</div>
+								<div class="item-info-profile__company company-info">
+									<div class="company-info__item">
+										<div class="company-info__content">
+											<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_1" readonly>
+											<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_2" readonly>
+											<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_3" readonly>
+										</div>
+										<div class="company-info__add">
+											<button class="item-info-profile__btn button button_light" data-popup="#add-address" type="button">
+												<i>+</i>Добавить новый адрес
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-info-profile">
+								<div class="item-info-profile__title text text_xl">Способ оплаты и&nbsp;доставки</div>
+								<div class="item-info-profile__text text">Тип плательщика</div>
+								<div class="item-info-profile__company company-info">
+									<div class="company-info__labels">
+										<div class="options options_payments">
+											<div class="options__item">
+												<input id="op_1" class="options__input" checked type="radio" value="1" name="option">
+												<label for="op_1" class="options__label">
+													<span class="options__text">Физ.лицо</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="op_2" class="options__input" type="radio" value="2" name="option">
+												<label for="op_2" class="options__label">
+													<span class="options__text">ИП или ООО без НДС</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="op_3" class="options__input" type="radio" value="2" name="option">
+												<label for="op_3" class="options__label">
+													<span class="options__text">ООО с НДС</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item-info-profile">
+								<div class="item-info-profile__title text text_xl">Привяжите соц.&nbsp;сети
+									к&nbsp;аккаунту
+								</div>
+								<div class="item-info-profile__text text">Для быстрого входа</div>
+								<div class="item-info-profile__company company-info">
+									<div class="company-info__media">
+										<div class="company-info__media-item">
+											<img class="ibg" src="img/social-buttons/yandex.webp" alt="Image">
+										</div>
+										<div class="company-info__media-item">
+											<img class="ibg" src="img/social-buttons/vk.webp" alt="Image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__inner">
+					<div class="footer__left left-footer">
+						<div class="left-footer__item">
+							<a href="tel:+73332220088" class="left-footer__link">+7 (333) 222-00-88</a> <span>/</span>
+							<a href="tel:+72223331177" class="left-footer__link">+7 (222) 333-11-77</a>
+						</div>
+						<div class="left-footer__item">
+							<a href="mailto:Topchinalogistics@mail.com" class="left-footer__link">Topchinalogistics@mail.com</a>
+						</div>
+					</div>
+					<div class="footer__right">
+						<div class="footer__documents">
+							<div class="footer__text">© 2025, ООО «Top China Logistics»</div>
+							<a href="" class="footer__link">Пользовательское соглашение</a>
+							<a href="" class="footer__link">Политика конфиденциальности</a>
+							<div class="footer__social">
+								<a href="" class="footer__social-item">
+									<span>Telegram</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+
+								</a>
+								<a href="" class="footer__social-item">
+									<span>WhatsaApp</span>
+									<i>
+										<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg>
+									</i>
+								</a>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<div class="footer__menu-title">Меню:</div>
+							<ul>
+								<li><a href="">Моя панель</a></li>
+								<li><a href="">Мои заказы</a></li>
+								<li><a href="">Инструкции</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div id="new-company" aria-hidden="true" class="popup popup_sm">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__add add-popup">
+						<div class="add-popup__title">Добавить компанию</div>
+						<div class="add-popup__form form">
+							<form action="">
+								<div class="form__inner">
+									<div class="form__row">
+										<label class="form__label" for="p-company">Название компании</label>
+										<input class="input" id="p-company" autocomplete="off" type="text" name="form[]" placeholder="Название компании">
+									</div>
+									<div class="form__row">
+										<label class="form__label" for="p-inn">ИНН</label>
+										<input class="input" id="p-inn" autocomplete="off" type="text" name="form[]" placeholder="Введите ИНН">
+									</div>
+									<div class="form__row">
+										<div class="js-upload-block" data-type="document">
+											<button class="add-popup__btn js-upload-btn" type="button"><i>+</i> Добавить файл
+											</button>
+											<input type="file" accept=".pdf,.doc,.docx,.txt" class="js-upload-input" hidden>
+											<div class="add-popup__text text js-upload-filename"></div>
+										</div>
+									</div>
+									<div class="form__row">
+										<div class="checkbox">
+											<input id="p_ch1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="p_ch1" class="checkbox__label">
+												<span class="checkbox__text">Компания с НДС</span>
+											</label>
+										</div>
+									</div>
+									<div class="form__row">
+										<button class="form__button button" type="submit">Сохранить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="add-address" aria-hidden="true" class="popup popup_sm">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__add add-popup">
+						<div class="add-popup__title">Добавить адрес</div>
+						<div class="add-popup__form form">
+							<form action="">
+								<div class="form__inner">
+									<div class="form__row">
+										<label class="form__label" for="p-address">Адрес доставки</label>
+										<input class="input" id="p-address" autocomplete="off" type="text" name="form[]" placeholder="Введите адрес доставки">
+									</div>
+									<div class="form__row">
+										<label class="form__label" for="p-komm">Комментарий</label>
+										<textarea class="input" id="p-komm" autocomplete="off" type="text" name="form[]" placeholder="Ваш комментарий"></textarea>
+									</div>
+									<div class="form__row">
+										<div class="checkbox">
+											<input id="p_ch2" class="checkbox__input" type="checkbox" value="1" name="form[]">
+											<label for="p_ch2" class="checkbox__label">
+												<span class="checkbox__text">Сделать адресом по умолчанию</span>
+											</label>
+										</div>
+									</div>
+									<div class="form__row">
+										<button class="form__button button" type="button">Сохранить</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="js/app.min.js?_v=20250729145226"></script>
+</body>
+
+</html>
