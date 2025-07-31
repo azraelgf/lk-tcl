@@ -5,7 +5,7 @@
 	<title>Создание заказа</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250731221443">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -154,7 +154,6 @@
 											<div class="progress__item-title">Готово</div>
 											<div class="progress__item-info">
 												<div class="progress__item-circle"></div>
-												<div class="progress__item-line"></div>
 											</div>
 										</div>
 									</div>
@@ -588,7 +587,7 @@
 																						<use xlink:href="img/icons/icons.svg#img"></use>
 																					</svg>
 																				</i>
-																				<span>Добавить фото</span>
+																				<span>Добавить файл</span>
 																			</button>
 																			<img class="js-upload-preview supplier-upload-preview" src="" alt="" hidden>
 																		</div>
@@ -811,7 +810,7 @@
 																			</select>
 																		</div>
 
-																		<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+																		<button class="info-block__btn" data-popup="#help" type="button">
 																			<svg>
 																				<use xlink:href="img/icons/icons.svg#info"></use>
 																			</svg>
@@ -859,7 +858,7 @@
 																					<use xlink:href="img/icons/icons.svg#del"></use>
 																				</svg>
 																			</button>
-																			<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+																			<button class="info-block__btn" data-popup="#help" type="button">
 																				<svg>
 																					<use xlink:href="img/icons/icons.svg#info"></use>
 																				</svg>
@@ -913,7 +912,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -931,7 +930,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -939,7 +938,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -957,7 +956,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -965,7 +964,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -983,7 +982,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -991,7 +990,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -1009,7 +1008,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -1017,7 +1016,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -1035,7 +1034,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -1043,7 +1042,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -1061,7 +1060,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -1069,7 +1068,7 @@
 													<li class="package__item item-package">
 														<div class="item-package__left">
 															<div class="item-package__left-block">
-																<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																<button class="item-package__icon" data-popup="#help">
 																	<svg>
 																		<use xlink:href="img/icons/icons.svg#info-i"></use>
 																	</svg>
@@ -1087,7 +1086,7 @@
 																/ 3.71 $
 															</div>
 															<label class="item-package__switch switch">
-																<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																<input class="switch__checkbox" type="radio" value="1" name="package">
 																<span class="switch__slider"></span>
 															</label>
 														</div>
@@ -1121,7 +1120,7 @@
 															</div>
 														</div>
 														<div class="item-sending-info__middle">
-															<textarea class="item-sending-info__input input" autocomplete="off" type="text" name="form[]" placeholder="¥ Введите данные"></textarea>
+															<input class="item-sending-info__input input" autocomplete="off" type="text" name="form[]" placeholder="¥ Введите данные">
 														</div>
 													</div>
 												</div>
@@ -1147,7 +1146,7 @@
 																	194,81 ₽
 																</div>
 																<label class="item-sending-info__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="sending">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1169,7 +1168,7 @@
 																	194,81 ₽
 																</div>
 																<label class="item-sending-info__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="sending">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1196,7 +1195,7 @@
 																<div class="item-sending-info__text">
 																	Пн - Вс 8:00 - 18:00
 																</div>
-																<button class="item-sending-info__link" type="button" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.">
+																<button class="item-sending-info__link" type="button" data-popup="#help">
 																	Условия хранения
 																</button>
 															</div>
@@ -1206,7 +1205,7 @@
 																	194,81 ₽
 																</div>
 																<label class="item-sending-info__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="sending">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1239,7 +1238,7 @@
 																	194,81 ₽
 																</div>
 																<label class="item-sending-info__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="sending">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1259,7 +1258,7 @@
 																<div class="item-sending-info__text">
 																	Вт - Сб 9:00 - 15:00
 																</div>
-																<button class="item-sending-info__link" type="button" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.">
+																<button class="item-sending-info__link" type="button" data-popup="#help">
 																	Условия хранения
 																</button>
 															</div>
@@ -1269,7 +1268,7 @@
 																	194,81 ₽
 																</div>
 																<label class="item-sending-info__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="sending">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1300,7 +1299,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1329,7 +1328,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1358,7 +1357,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1386,7 +1385,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1414,7 +1413,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1442,7 +1441,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1470,7 +1469,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1498,7 +1497,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1526,7 +1525,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1561,7 +1560,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1581,7 +1580,7 @@
 																	/ 3.71 $
 																</div>
 																<label class="item-package__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="safe">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1589,7 +1588,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1609,7 +1608,7 @@
 																	/ 3.71 $
 																</div>
 																<label class="item-package__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="safe">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1617,7 +1616,7 @@
 														<li class="package__item item-package">
 															<div class="item-package__left">
 																<div class="item-package__left-block">
-																	<button class="item-package__icon" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi facere minus repudiandae.">
+																	<button class="item-package__icon" data-popup="#help">
 																		<svg>
 																			<use xlink:href="img/icons/icons.svg#info-i"></use>
 																		</svg>
@@ -1637,7 +1636,7 @@
 																	/ 3.71 $
 																</div>
 																<label class="item-package__switch switch">
-																	<input class="switch__checkbox" type="checkbox" value="1" name="form[]">
+																	<input class="switch__checkbox" type="radio" value="1" name="safe">
 																	<span class="switch__slider"></span>
 																</label>
 															</div>
@@ -1691,6 +1690,9 @@
 															<div class="company-info__item">
 																<div class="company-info__content">
 																	<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
+																	<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
+																	<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
+																	<input class="company-info__input input" autocomplete="off" value="ИНН ХХХХХХХХХ1" type="text" name="company_name" readonly>
 																</div>
 																<div class="company-info__add">
 																	<button class="item-info-profile__btn button button_light" data-popup="#new-company" type="button"><i>+</i>
@@ -1711,6 +1713,7 @@
 														<div class="item-info-profile__company company-info">
 															<div class="company-info__item">
 																<div class="company-info__content">
+																	<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_1" readonly>
 																	<input class="company-info__input input" autocomplete="off" value="Москва, ул Туполева, дм 20" type="text" name="address_1" readonly>
 																</div>
 																<div class="company-info__add">
@@ -1988,6 +1991,31 @@
 				</div>
 			</div>
 		</div>
+		<div id="help" aria-hidden="true" class="popup popup_sm">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+							<path d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+						</svg>
+					</button>
+					<div class="popup__help help-popup">
+						<div class="help-popup__title">Подсказка общая</div>
+						<div class="help-popup__text">
+							<p>
+								Температурно-влажностный режим. В помещениях с регулируемым климатом документы хранят при
+								температуре 17–19 °С и влажности воздуха 50–58%, в помещениях с нерегулируемым климатом — при
+								температуре 14–20 °С и влажности воздуха 45–60%.
+							</p>
+							<p>
+								Резкие колебания температуры и влажности воздуха не допускаются.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div id="product-info" aria-hidden="true" class="popup">
 			<div class="popup__wrapper">
@@ -2084,7 +2112,7 @@
 									<div class="info-product-popup__item">
 										<div class="info-product-popup__label info-block">
 											<div class="info-block__text">На платформе</div>
-											<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus." type="button">
+											<button class="info-block__btn" data-popup="#help" type="button">
 												<svg>
 													<use xlink:href="img/icons/icons.svg#info"></use>
 												</svg>
@@ -2095,7 +2123,7 @@
 									<div class="info-product-popup__item">
 										<div class="info-product-popup__label info-block">
 											<div class="info-block__text">Рейтинг продаж</div>
-											<button class="info-block__btn" data-tippy-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, temporibus" type="button">
+											<button class="info-block__btn" data-popup="#help" type="button">
 												<svg>
 													<use xlink:href="img/icons/icons.svg#info"></use>
 												</svg>
@@ -2244,7 +2272,7 @@
 		</div>
 
 	</div>
-	<script src="js/app.min.js?_v=20250729145226"></script>
+	<script src="js/app.min.js?_v=20250731221443"></script>
 </body>
 
 </html>

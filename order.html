@@ -5,7 +5,7 @@
 	<title>Заказ</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20250729145226">
+	<link rel="stylesheet" href="css/style.min.css?_v=20250731221443">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,19 +152,17 @@
 												</a>
 												<div class="item-product__count count-product">
 													<div class="count-product__item">
-														<label for="price" class="count-product__label text">Цена</label>
-														<div class="count-product__block">
+														<div class="count-product__label text">Цена</div>
+														<div class="count-product__block count-product__block_read">
 															<span>¥</span>
-															<input class="count-product__input" id="price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+															<input class="count-product__input count-product__input_read" autocomplete="off" type="text" name="form[]" readonly value="60.05" placeholder="60.05">
 														</div>
 													</div>
-													<div class="count-product__item">
-														<label for="count" class="count-product__label text">Кол-во
-														</label>
-														<div class="count-product__quantity quantity" data-quantity="">
-															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
-															<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="count" name="form[]" value="1"></div>
-															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+													<div class="count-product__item count-product__block_read">
+														<div class="count-product__label text">Кол-во
+														</div>
+														<div class="count-product__quantity quantity">
+															<div class="quantity__input"><input data-quantity-value autocomplete="off" readonly type="text" name="form[]" value="100"></div>
 														</div>
 													</div>
 													<div class="count-product__item">
@@ -201,19 +199,17 @@
 												</a>
 												<div class="item-product__count count-product">
 													<div class="count-product__item">
-														<label for="o-price" class="count-product__label text">Цена</label>
-														<div class="count-product__block">
+														<div class="count-product__label text">Цена</div>
+														<div class="count-product__block count-product__block_read">
 															<span>¥</span>
-															<input class="count-product__input" id="o-price" autocomplete="off" type="text" name="form[]" data-error="Ошибка" value="60.05" placeholder="60.05">
+															<input class="count-product__input count-product__input_read" autocomplete="off" type="text" name="form[]" readonly value="60.05" placeholder="60.05">
 														</div>
 													</div>
-													<div class="count-product__item">
-														<label for="o-count" class="count-product__label text">Кол-во
-														</label>
-														<div class="count-product__quantity quantity" data-quantity="">
-															<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
-															<div class="quantity__input"><input data-quantity-value autocomplete="off" type="text" id="o-count" name="form[]" value="1"></div>
-															<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+													<div class="count-product__item count-product__block_read">
+														<div class="count-product__label text">Кол-во
+														</div>
+														<div class="count-product__quantity quantity">
+															<div class="quantity__input"><input data-quantity-value autocomplete="off" readonly type="text" name="form[]" value="100"></div>
 														</div>
 													</div>
 													<div class="count-product__item">
@@ -393,7 +389,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20250729145226"></script>
+	<script src="js/app.min.js?_v=20250731221443"></script>
 </body>
 
 </html>
