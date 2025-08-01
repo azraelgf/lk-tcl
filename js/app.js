@@ -4761,10 +4761,31 @@
                         preview.src = e.target.result;
                         preview.hidden = false;
                         if (btnImg) btnImg.remove();
+                        if (block.closest(".supplier-product__images")) {
+                            preview.style.cursor = "zoom-in";
+                            const newPreview = preview.cloneNode(true);
+                            preview.replaceWith(newPreview);
+                            newPreview.addEventListener("click", (() => {
+                                const overlay = document.createElement("div");
+                                overlay.style.cssText = `\n                    position: fixed;\n                    inset: 0;\n                    background: rgba(0, 0, 0, 0.8);\n                    display: flex;\n                    align-items: center;\n                    justify-content: center;\n                    z-index: 9999;\n                    cursor: zoom-out;\n                `;
+                                const fullImg = document.createElement("img");
+                                fullImg.src = newPreview.src;
+                                fullImg.style.cssText = `\n                    max-width: 90vw;\n                    max-height: 90vh;\n                    box-shadow: 0 0 20px rgba(0,0,0,0.5);\n                `;
+                                overlay.appendChild(fullImg);
+                                document.body.appendChild(overlay);
+                                overlay.addEventListener("click", (() => overlay.remove()));
+                            }));
+                        }
                     };
                     reader.readAsDataURL(file);
                 }
-                if (type === "document" && filename) filename.textContent = file.name;
+                if (type === "document" && filename) {
+                    filename.textContent = file.name;
+                    if (block.closest(".supplier-product__images")) {
+                        const button = block.querySelector(".js-upload-img");
+                        if (button) button.remove();
+                    }
+                }
             }));
         }));
     }));
