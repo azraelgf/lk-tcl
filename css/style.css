@@ -801,7 +801,11 @@ textarea.input {
   translate: -50% 0;
   color: var(--white);
   border-radius: 1.25rem;
-  background-color: var(--primary)
+  background-color: var(--primary);
+  display: none
+}
+.cookie.show {
+  display: block
 }
 .cookie__container {
   padding: 0;
@@ -2810,7 +2814,7 @@ body::after {
   }
   .item-quiz-add__next,
   .item-quiz-add__prev {
-    flex: 0 0 8.75rem
+    min-width: 8.75rem
   }
   .company-info__media-item {
     min-width: 12.5rem

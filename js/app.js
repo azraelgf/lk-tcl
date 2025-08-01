@@ -4706,16 +4706,19 @@
     const da = new DynamicAdapt("max");
     da.init();
     function checkCookies() {
-        let cookieDate = localStorage.getItem("cookieDate");
-        let cookieNotification = document.querySelector(".js-cookie");
-        let cookieBtn = cookieNotification.querySelector(".cookie__btn");
+        const cookieNotification = document.querySelector(".js-cookie");
+        if (!cookieNotification) return;
+        const cookieBtn = cookieNotification.querySelector(".cookie__btn");
+        const cookieDate = localStorage.getItem("cookieDate");
         if (!cookieDate || +cookieDate + 31536e6 < Date.now()) cookieNotification.classList.add("show");
-        cookieBtn.addEventListener("click", (function() {
+        cookieBtn?.addEventListener("click", (function() {
             localStorage.setItem("cookieDate", Date.now());
             cookieNotification.classList.remove("show");
         }));
     }
-    if (document.querySelector(".js-cookie")) checkCookies();
+    document.addEventListener("DOMContentLoaded", (() => {
+        checkCookies();
+    }));
     document.addEventListener("DOMContentLoaded", (function() {
         const blocks = document.querySelectorAll(".js-upload-block");
         blocks.forEach((block => {
@@ -4806,6 +4809,10 @@
             }));
         }));
         goToStep(0, true);
+        document.addEventListener("click", (function(e) {
+            const finishBtn = e.target.closest(".js-chine-finish");
+            if (finishBtn) goToStep(quizSteps.length - 1);
+        }));
         const cargoBlock = document.querySelector(".cargo");
         if (cargoBlock) {
             const radios = cargoBlock.querySelectorAll('input[name="cargo"]');
