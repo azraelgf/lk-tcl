@@ -381,19 +381,7 @@
 		</div>
 
 	</div>
-	<script src="js/app.min.js?_v=20250801173747" defer></script>
-	<script>
-		// гарантия существования глобального объекта
-		window.flsModules = window.flsModules || {};
-
-		// если app.min.js не положил popup сам – создаём
-		if (!window.flsModules.popup && typeof Popup === 'function') {
-			window.flsModules.popup = new Popup({});
-		}
-
-		// вызываем только когда он точно есть
-		window.flsModules.popup.open('#new-company');
-	</script>
+	<script src="js/app.min.js?_v=20250801173747"></script>
 
 </body>
 
