@@ -4719,75 +4719,110 @@
     document.addEventListener("DOMContentLoaded", (() => {
         checkCookies();
     }));
-    const UPLOAD_CFG = {
-        maxSizeMB: 1,
-        imageTypes: [ "image/jpeg", "image/png", "image/gif", "image/webp" ],
-        docTypes: [ "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain" ]
-    };
-    document.addEventListener("click", (e => {
-        const trigger = e.target.closest(".js-upload-img, .js-upload-btn");
-        if (!trigger) return;
-        const block = trigger.closest(".js-upload-block");
-        const input = block?.querySelector(".js-upload-input");
-        if (!block || !input) return;
-        e.preventDefault();
-        input.click();
-    }));
-    document.addEventListener("change", (e => {
-        const input = e.target.closest(".js-upload-input");
-        if (!input) return;
-        const block = input.closest(".js-upload-block");
-        if (!block) return;
-        const type = block.dataset.type;
-        const preview = block.querySelector(".js-upload-preview");
-        const filename = block.querySelector(".js-upload-filename");
-        const btnImg = block.querySelector(".js-upload-img");
-        const file = input.files && input.files[0];
-        if (!file) return;
-        const maxSizeBytes = UPLOAD_CFG.maxSizeMB * 1024 * 1024;
-        const allowedTypes = type === "document" ? UPLOAD_CFG.docTypes : UPLOAD_CFG.imageTypes;
-        if (!allowedTypes.includes(file.type)) {
-            alert(type === "image" ? "Допустимы только изображения: JPG, PNG, GIF, WEBP" : "Допустимы только документы: PDF, DOC, DOCX, TXT");
-            input.value = "";
-            return;
+    (() => {
+        const MAX_SIZE_MB = 1;
+        const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
+        const IMAGE_TYPES = [ "image/jpeg", "image/png", "image/gif", "image/webp" ];
+        const DOC_TYPES = [ "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain" ];
+        const inited = new WeakSet;
+        function addZoom(preview, block) {
+            if (!block.closest(".supplier-product__images")) return;
+            preview.style.cursor = "zoom-in";
+            const fresh = preview.cloneNode(true);
+            preview.replaceWith(fresh);
+            fresh.addEventListener("click", (() => {
+                const overlay = document.createElement("div");
+                overlay.style.cssText = `\n        position: fixed; inset: 0; background: rgba(0,0,0,.8);\n        display:flex; align-items:center; justify-content:center;\n        z-index:9999; cursor: zoom-out;\n      `;
+                const full = document.createElement("img");
+                full.src = fresh.src;
+                full.style.cssText = `max-width:90vw; max-height:90vh; box-shadow:0 0 20px rgba(0,0,0,.5);`;
+                overlay.appendChild(full);
+                document.body.appendChild(overlay);
+                overlay.addEventListener("click", (() => overlay.remove()));
+            }));
         }
-        if (file.size > maxSizeBytes) {
-            alert(`Файл не должен превышать ${UPLOAD_CFG.maxSizeMB} МБ`);
-            input.value = "";
-            return;
-        }
-        if (type === "image" && preview) {
-            const reader = new FileReader;
-            reader.onload = ev => {
-                preview.src = ev.target.result;
-                preview.hidden = false;
-                if (btnImg) btnImg.remove();
-                if (block.closest(".supplier-product__images")) {
-                    preview.style.cursor = "zoom-in";
-                    const newPreview = preview.cloneNode(true);
-                    preview.replaceWith(newPreview);
-                    newPreview.addEventListener("click", (() => {
-                        const overlay = document.createElement("div");
-                        overlay.style.cssText = `\n            position: fixed;\n            inset: 0;\n            background: rgba(0,0,0,0.8);\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            z-index: 9999;\n            cursor: zoom-out;\n          `;
-                        const fullImg = document.createElement("img");
-                        fullImg.src = newPreview.src;
-                        fullImg.style.cssText = `\n            max-width: 90vw;\n            max-height: 90vh;\n            box-shadow: 0 0 20px rgba(0,0,0,0.5);\n          `;
-                        overlay.appendChild(fullImg);
-                        document.body.appendChild(overlay);
-                        overlay.addEventListener("click", (() => overlay.remove()));
-                    }));
+        function hydrateExistingState(block, type, preview, btnImg) {
+            if (type === "image" && preview) {
+                const src = (preview.getAttribute("src") || "").trim();
+                const dataImage = (preview.getAttribute("data-image") || "").trim();
+                if (src || dataImage) {
+                    preview.hidden = false;
+                    if (btnImg) btnImg.remove();
+                    addZoom(preview, block);
                 }
-            };
-            reader.readAsDataURL(file);
-        }
-        if (type === "document" && filename) {
-            filename.textContent = file.name;
-            if (block.closest(".supplier-product__images")) {
-                const button = block.querySelector(".js-upload-img");
-                if (button) button.remove();
             }
         }
-    }));
+        function initUploadBlock(block) {
+            if (!block || inited.has(block)) return;
+            inited.add(block);
+            const type = block.dataset.type;
+            const btn = block.querySelector(".js-upload-btn");
+            const btnImg = block.querySelector(".js-upload-img");
+            const input = block.querySelector(".js-upload-input");
+            const preview = block.querySelector(".js-upload-preview");
+            const filename = block.querySelector(".js-upload-filename");
+            if (!input) return;
+            const proxyClick = e => {
+                e.preventDefault();
+                input.click();
+            };
+            if (btnImg) btnImg.addEventListener("click", proxyClick);
+            if (btn) btn.addEventListener("click", proxyClick);
+            hydrateExistingState(block, type, preview, btnImg);
+            input.addEventListener("change", (() => {
+                const file = input.files && input.files[0];
+                if (!file) return;
+                const allowed = type === "document" ? DOC_TYPES : IMAGE_TYPES;
+                if (!allowed.includes(file.type)) {
+                    alert(type === "image" ? "Допустимы только изображения: JPG, PNG, GIF, WEBP" : "Допустимы только документы: PDF, DOC, DOCX, TXT");
+                    input.value = "";
+                    return;
+                }
+                if (file.size > MAX_SIZE_BYTES) {
+                    alert(`Файл не должен превышать ${MAX_SIZE_MB} МБ`);
+                    input.value = "";
+                    return;
+                }
+                if (type === "image" && preview) {
+                    const reader = new FileReader;
+                    reader.onload = ev => {
+                        preview.src = ev.target.result;
+                        preview.hidden = false;
+                        const _btnImg = block.querySelector(".js-upload-img");
+                        if (_btnImg) _btnImg.remove();
+                        addZoom(preview, block);
+                    };
+                    reader.readAsDataURL(file);
+                }
+                if (type === "document" && filename) {
+                    filename.textContent = file.name;
+                    if (block.closest(".supplier-product__images")) {
+                        const button = block.querySelector(".js-upload-img");
+                        if (button) button.remove();
+                    }
+                }
+            }));
+        }
+        function initUploadBlocks(root = document) {
+            root.querySelectorAll(".js-upload-block").forEach(initUploadBlock);
+        }
+        const mo = new MutationObserver((mutations => {
+            for (const m of mutations) m.addedNodes.forEach((node => {
+                if (!(node instanceof Element)) return;
+                if (node.matches && node.matches(".js-upload-block")) initUploadBlock(node);
+                const inner = node.querySelectorAll ? node.querySelectorAll(".js-upload-block") : [];
+                inner.forEach(initUploadBlock);
+            }));
+        }));
+        document.addEventListener("DOMContentLoaded", (() => {
+            initUploadBlocks(document);
+            mo.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }));
+        window.initUploadBlocks = initUploadBlocks;
+    })();
     document.addEventListener("DOMContentLoaded", (function() {
         const progressItems = document.querySelectorAll(".progress__item");
         const quizSteps = document.querySelectorAll(".quiz-order__content > .quiz-order__body");
