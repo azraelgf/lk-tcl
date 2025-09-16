@@ -4724,104 +4724,106 @@
         const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
         const IMAGE_TYPES = [ "image/jpeg", "image/png", "image/gif", "image/webp" ];
         const DOC_TYPES = [ "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain" ];
-        const inited = new WeakSet;
-        function addZoom(preview, block) {
-            if (!block.closest(".supplier-product__images")) return;
-            preview.style.cursor = "zoom-in";
-            const fresh = preview.cloneNode(true);
-            preview.replaceWith(fresh);
-            fresh.addEventListener("click", (() => {
-                const overlay = document.createElement("div");
-                overlay.style.cssText = `\n        position: fixed; inset: 0; background: rgba(0,0,0,.8);\n        display:flex; align-items:center; justify-content:center;\n        z-index:9999; cursor: zoom-out;\n      `;
-                const full = document.createElement("img");
-                full.src = fresh.src;
-                full.style.cssText = `max-width:90vw; max-height:90vh; box-shadow:0 0 20px rgba(0,0,0,.5);`;
-                overlay.appendChild(full);
-                document.body.appendChild(overlay);
-                overlay.addEventListener("click", (() => overlay.remove()));
-            }));
+        const isInImages = el => !!el.closest(".supplier-product__images");
+        const getBlock = el => el.closest(".js-upload-block");
+        function showOverlay(src) {
+            if (!src) return;
+            const overlay = document.createElement("div");
+            overlay.style.cssText = `\n      position: fixed; inset: 0; background: rgba(0,0,0,.8);\n      display:flex; align-items:center; justify-content:center;\n      z-index:9999; cursor: zoom-out;`;
+            const full = document.createElement("img");
+            full.src = src;
+            full.style.cssText = `max-width:90vw; max-height:90vh; box-shadow:0 0 20px rgba(0,0,0,.5);`;
+            overlay.appendChild(full);
+            document.body.appendChild(overlay);
+            overlay.addEventListener("click", (() => overlay.remove()));
         }
-        function hydrateExistingState(block, type, preview, btnImg) {
+        function hydrateBlock(block) {
+            const type = block.dataset.type;
+            const preview = block.querySelector(".js-upload-preview");
+            const btnImg = block.querySelector(".js-upload-img");
             if (type === "image" && preview) {
                 const src = (preview.getAttribute("src") || "").trim();
                 const dataImage = (preview.getAttribute("data-image") || "").trim();
                 if (src || dataImage) {
                     preview.hidden = false;
                     if (btnImg) btnImg.remove();
-                    addZoom(preview, block);
+                    if (isInImages(block)) preview.style.cursor = "zoom-in";
                 }
             }
         }
-        function initUploadBlock(block) {
-            if (!block || inited.has(block)) return;
-            inited.add(block);
+        function hydrateAll(root = document) {
+            root.querySelectorAll(".js-upload-block").forEach(hydrateBlock);
+        }
+        document.addEventListener("click", (e => {
+            const trigger = e.target.closest(".js-upload-img, .js-upload-btn");
+            if (!trigger) return;
+            const block = getBlock(trigger);
+            const input = block && block.querySelector(".js-upload-input");
+            if (!block || !input) return;
+            e.preventDefault();
+            input.click();
+        }));
+        document.addEventListener("change", (e => {
+            const input = e.target.closest(".js-upload-input");
+            if (!input) return;
+            const block = getBlock(input);
+            if (!block) return;
             const type = block.dataset.type;
-            const btn = block.querySelector(".js-upload-btn");
-            const btnImg = block.querySelector(".js-upload-img");
-            const input = block.querySelector(".js-upload-input");
             const preview = block.querySelector(".js-upload-preview");
             const filename = block.querySelector(".js-upload-filename");
-            if (!input) return;
-            const proxyClick = e => {
-                e.preventDefault();
-                input.click();
-            };
-            if (btnImg) btnImg.addEventListener("click", proxyClick);
-            if (btn) btn.addEventListener("click", proxyClick);
-            hydrateExistingState(block, type, preview, btnImg);
-            input.addEventListener("change", (() => {
-                const file = input.files && input.files[0];
-                if (!file) return;
-                const allowed = type === "document" ? DOC_TYPES : IMAGE_TYPES;
-                if (!allowed.includes(file.type)) {
-                    alert(type === "image" ? "Допустимы только изображения: JPG, PNG, GIF, WEBP" : "Допустимы только документы: PDF, DOC, DOCX, TXT");
-                    input.value = "";
-                    return;
+            const file = input.files && input.files[0];
+            if (!file) return;
+            const allowed = type === "document" ? DOC_TYPES : IMAGE_TYPES;
+            if (!allowed.includes(file.type)) {
+                alert(type === "image" ? "Допустимы только изображения: JPG, PNG, GIF, WEBP" : "Допустимы только документы: PDF, DOC, DOCX, TXT");
+                input.value = "";
+                return;
+            }
+            if (file.size > MAX_SIZE_BYTES) {
+                alert(`Файл не должен превышать ${MAX_SIZE_MB} МБ`);
+                input.value = "";
+                return;
+            }
+            if (type === "image" && preview) {
+                const reader = new FileReader;
+                reader.onload = ev => {
+                    preview.src = ev.target.result;
+                    preview.hidden = false;
+                    const btnImg = block.querySelector(".js-upload-img");
+                    if (btnImg) btnImg.remove();
+                    if (isInImages(block)) preview.style.cursor = "zoom-in";
+                };
+                reader.readAsDataURL(file);
+            } else if (type === "document" && filename) {
+                filename.textContent = file.name;
+                if (isInImages(block)) {
+                    const button = block.querySelector(".js-upload-img");
+                    if (button) button.remove();
                 }
-                if (file.size > MAX_SIZE_BYTES) {
-                    alert(`Файл не должен превышать ${MAX_SIZE_MB} МБ`);
-                    input.value = "";
-                    return;
-                }
-                if (type === "image" && preview) {
-                    const reader = new FileReader;
-                    reader.onload = ev => {
-                        preview.src = ev.target.result;
-                        preview.hidden = false;
-                        const _btnImg = block.querySelector(".js-upload-img");
-                        if (_btnImg) _btnImg.remove();
-                        addZoom(preview, block);
-                    };
-                    reader.readAsDataURL(file);
-                }
-                if (type === "document" && filename) {
-                    filename.textContent = file.name;
-                    if (block.closest(".supplier-product__images")) {
-                        const button = block.querySelector(".js-upload-img");
-                        if (button) button.remove();
-                    }
-                }
-            }));
-        }
-        function initUploadBlocks(root = document) {
-            root.querySelectorAll(".js-upload-block").forEach(initUploadBlock);
-        }
+            }
+        }));
+        document.addEventListener("click", (e => {
+            const img = e.target.closest(".js-upload-preview");
+            if (!img) return;
+            const block = getBlock(img);
+            if (!block || !isInImages(block) || !img.src || img.hidden) return;
+            showOverlay(img.src);
+        }));
         const mo = new MutationObserver((mutations => {
-            for (const m of mutations) m.addedNodes.forEach((node => {
-                if (!(node instanceof Element)) return;
-                if (node.matches && node.matches(".js-upload-block")) initUploadBlock(node);
-                const inner = node.querySelectorAll ? node.querySelectorAll(".js-upload-block") : [];
-                inner.forEach(initUploadBlock);
-            }));
+            for (const m of mutations) for (const node of m.addedNodes) {
+                if (!(node instanceof Element)) continue;
+                if (node.matches?.(".js-upload-block")) hydrateBlock(node);
+                node.querySelectorAll?.(".js-upload-block").forEach(hydrateBlock);
+            }
         }));
         document.addEventListener("DOMContentLoaded", (() => {
-            initUploadBlocks(document);
+            hydrateAll(document);
             mo.observe(document.body, {
                 childList: true,
                 subtree: true
             });
         }));
-        window.initUploadBlocks = initUploadBlocks;
+        globalThis.initUploadBlocks = hydrateAll;
     })();
     document.addEventListener("DOMContentLoaded", (function() {
         const progressItems = document.querySelectorAll(".progress__item");
